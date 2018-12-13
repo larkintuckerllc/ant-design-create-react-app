@@ -1,14 +1,14 @@
 {
-  "name": "hello-larkintuckerllc-react-scripts",
-  "version": "0.2.2",
-  "description": "(2.1.1) Hello Larkin & Tucker LLC Configuration and scripts for Create React App.",
-  "repository": "larkintuckerllc/hello-create-react-app",
+  "name": "ant-design-larkintuckerllc-react-scripts",
+  "version": "0.1.0",
+  "description": "(2.1.1) Ant Design Larkin & Tucker LLC Configuration and scripts for Create React App.",
+  "repository": "larkintuckerllc/ant-design-create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/larkintuckerllc/hello-create-react-app/issues"
+    "url": "https://github.com/larkintuckerllc/ant-design-create-react-app/issues"
   },
   "files": [
     "bin",
