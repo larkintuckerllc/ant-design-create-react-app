@@ -402,7 +402,7 @@ module.exports = function(webpackEnv) {
                     'import',
                     {
                       libraryName: 'antd',
-                      style: 'css',
+                      style: true,
                     },
                   ],
                   // ant-design-larkintuckerllc-react-scripts end
