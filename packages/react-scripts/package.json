@@ -1,6 +1,6 @@
 {
   "name": "ant-design-larkintuckerllc-react-scripts",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "(2.1.1) Ant Design Larkin & Tucker LLC Configuration and scripts for Create React App.",
   "repository": "larkintuckerllc/ant-design-create-react-app",
   "license": "MIT",
@@ -70,6 +70,7 @@
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
     "webpack": "4.19.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-dev-server": "3.1.9",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.3"

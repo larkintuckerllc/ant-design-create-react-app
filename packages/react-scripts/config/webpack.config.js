@@ -34,6 +34,10 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 // @remove-on-eject-begin
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
+// ant-design-larkintuckerllc-react-scripts start
+const antDesignLarkinTuckerLLCBundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
+// ant-design-larkintuckerllc-react-scripts end
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -710,6 +714,10 @@ module.exports = function(webpackEnv) {
           silent: true,
           formatter: typescriptFormatter,
         }),
+      // ant-design-larkintuckerllc-react-scripts start
+      process.env.ANT_DESIGN_LARKIN_TUCKER_LLC_ANALYZE &&
+        new antDesignLarkinTuckerLLCBundleAnalyzerPlugin(),
+      // ant-design-larkintuckerllc-react-scripts end
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.

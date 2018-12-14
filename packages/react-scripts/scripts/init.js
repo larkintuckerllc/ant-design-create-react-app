@@ -115,6 +115,9 @@ module.exports = function(
     build: 'react-scripts build',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
+    // ant-design-larkintuckerllc-react-scripts start
+    analyze: 'ANT_DESIGN_LARKIN_TUCKER_LLC_ANALYZE=1 react-scripts build',
+    // ant-design-larkintuckerllc-react-scripts end
   };
 
   // Setup the eslint config
