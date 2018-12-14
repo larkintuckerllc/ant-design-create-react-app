@@ -130,9 +130,17 @@ module.exports = function(webpackEnv) {
     if (preProcessor) {
       loaders.push({
         loader: require.resolve(preProcessor),
-        options: {
-          sourceMap: isEnvProduction && shouldUseSourceMap,
-        },
+        // ant-design-larkintuckerllc-react-scripts start
+        options:
+          preProcessor === 'less-loader'
+            ? {
+                modifyVars: antDesignLarkinTuckerLLCLessModifyVars,
+                sourceMap: isEnvProduction && shouldUseSourceMap,
+              }
+            : {
+                sourceMap: isEnvProduction && shouldUseSourceMap,
+              },
+        // ant-design-larkintuckerllc-react-scripts end
       });
     }
     return loaders;
@@ -531,12 +539,7 @@ module.exports = function(webpackEnv) {
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
-                {
-                  loader: 'less-loader',
-                  options: {
-                    modifyVars: antDesignLarkinTuckerLLCLessModifyVars,
-                  },
-                }
+                'less-loader'
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -555,12 +558,7 @@ module.exports = function(webpackEnv) {
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
-                {
-                  loader: 'less-loader',
-                  options: {
-                    modifyVars: antDesignLarkinTuckerLLCLessModifyVars,
-                  },
-                }
+                'less-loader'
               ),
             },
             // ant-design-larkintuckerllc-react-scripts end
