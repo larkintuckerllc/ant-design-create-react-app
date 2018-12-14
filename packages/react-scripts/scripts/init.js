@@ -80,6 +80,9 @@ function antDesignLarkinTuckerLLCDirections() {
   console.log(chalk.yellow('Ant Design Larkin & Tucker LLC Directions'));
   console.log('Inside that directory, you can run several commands:');
   console.log();
+  console.log(chalk.cyan(`  yarn analyze`));
+  console.log('    Analyze bundles using webpack-bundle-analyzer.');
+  console.log();
   console.log(chalk.cyan(`  yarn add --dev less`));
   console.log('    Adds support for Less.');
   console.log();
