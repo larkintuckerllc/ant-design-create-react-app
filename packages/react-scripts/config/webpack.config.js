@@ -379,6 +379,13 @@ module.exports = function(webpackEnv) {
                 // @remove-on-eject-end
                 plugins: [
                   [
+                    'import',
+                    {
+                      libraryName: 'antd',
+                      style: 'css',
+                    },
+                  ],
+                  [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
                       loaderMap: {
@@ -512,6 +519,7 @@ module.exports = function(webpackEnv) {
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
+                // TODO: ADD SUPPORT FOR LESS CONFIG
                 'less-loader'
               ),
               // Don't consider CSS imports dead code even if the
@@ -531,6 +539,7 @@ module.exports = function(webpackEnv) {
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
+                // TODO: ADD SUPPORT FOR LESS CONFIG
                 'less-loader'
               ),
             },
