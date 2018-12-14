@@ -134,6 +134,7 @@ module.exports = function(webpackEnv) {
         options:
           preProcessor === 'less-loader'
             ? {
+                javascriptEnabled: true,
                 modifyVars: antDesignLarkinTuckerLLCLessModifyVars,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
               }
