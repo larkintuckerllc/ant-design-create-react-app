@@ -252,7 +252,11 @@ function verifyTypeScriptSetup() {
   if (!fs.existsSync(paths.appTypeDeclarations)) {
     fs.writeFileSync(
       paths.appTypeDeclarations,
-      `/// <reference types="react-scripts" />${os.EOL}`
+      // ant-design-larkintuckerllc-react-scripts start
+      `/// <reference types="ant-design-larkintuckerllc-react-scripts" />${
+        os.EOL
+      }`
+      // ant-design-larkintuckerllc-react-scripts end
     );
   }
 }
