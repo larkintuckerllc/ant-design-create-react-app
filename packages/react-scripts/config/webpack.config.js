@@ -50,10 +50,20 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-// hello-larkintuckerllc-react-scripts start
-const lessRegex = /\.less$/;
-const lessModuleRegex = /\.module\.less$/;
-// hello-larkintuckerllc-react-scripts end
+// ant-design-larkintuckerllc-react-scripts start
+const antDesignLarkinTuckerLLCLessRegex = /\.less$/;
+const antDesignLarkinTuckerLLCLessModuleRegex = /\.module\.less$/;
+// ant-design-larkintuckerllc-react-scripts end
+
+// ant-design-larkintuckerllc-react-scripts start
+let antDesignLarkinTuckerLLCLessModifyVars = {};
+const antDesignLarkinTuckerLLCUseLessModifyVars = fs.existsSync(
+  paths.antDesignLarkinTuckerLLCLessModifyVars
+);
+if (antDesignLarkinTuckerLLCUseLessModifyVars) {
+  antDesignLarkinTuckerLLCLessModifyVars = require(paths.antDesignLarkinTuckerLLCLessModifyVars);
+}
+// ant-design-larkintuckerllc-react-scripts end
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -378,6 +388,7 @@ module.exports = function(webpackEnv) {
                 ),
                 // @remove-on-eject-end
                 plugins: [
+                  // ant-design-larkintuckerllc-react-scripts start
                   [
                     'import',
                     {
@@ -385,6 +396,7 @@ module.exports = function(webpackEnv) {
                       style: 'css',
                     },
                   ],
+                  // ant-design-larkintuckerllc-react-scripts end
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
@@ -507,20 +519,24 @@ module.exports = function(webpackEnv) {
                 'sass-loader'
               ),
             },
-            // hello-larkintuckerllc-react-scripts start
+            // ant-design-larkintuckerllc-react-scripts start
             // Opt-in support for Less (using .less extensions).
             // By default we support Less Modules with the
             // extensions .module.less
             {
-              test: lessRegex,
-              exclude: lessModuleRegex,
+              test: antDesignLarkinTuckerLLCLessRegex,
+              exclude: antDesignLarkinTuckerLLCLessModuleRegex,
               use: getStyleLoaders(
                 {
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
-                // TODO: ADD SUPPORT FOR LESS CONFIG
-                'less-loader'
+                {
+                  loader: 'less-loader',
+                  options: {
+                    modifyVars: antDesignLarkinTuckerLLCLessModifyVars,
+                  },
+                }
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -531,7 +547,7 @@ module.exports = function(webpackEnv) {
             // Adds support for CSS Modules, but using Less
             // using the extension .module.less
             {
-              test: lessModuleRegex,
+              test: antDesignLarkinTuckerLLCLessModuleRegex,
               use: getStyleLoaders(
                 {
                   importLoaders: 2,
@@ -539,11 +555,15 @@ module.exports = function(webpackEnv) {
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
-                // TODO: ADD SUPPORT FOR LESS CONFIG
-                'less-loader'
+                {
+                  loader: 'less-loader',
+                  options: {
+                    modifyVars: antDesignLarkinTuckerLLCLessModifyVars,
+                  },
+                }
               ),
             },
-            // hello-larkintuckerllc-react-scripts end
+            // ant-design-larkintuckerllc-react-scripts end
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.

@@ -58,9 +58,9 @@ declare module '*.module.sass' {
   export default classes;
 }
 
-// hello-larkintuckerllc-react-scripts start
+// ant-design-larkintuckerllc-react-scripts start
 declare module '*.module.less' {
   const classes: { [key: string]: string };
   export default classes;
 }
-// hello-larkintuckerllc-react-scripts end
+// ant-design-larkintuckerllc-react-scripts end

@@ -90,6 +90,9 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  // ant-design-larkintuckerllc-react-scripts start
+  antDesignLarkinTuckerLLCLessModifyVars: resolveApp('less-modify-vars.js'),
+  // ant-design-larkintuckerllc-react-scripts end
 };
 
 // @remove-on-eject-begin

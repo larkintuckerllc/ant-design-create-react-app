@@ -75,15 +75,21 @@ function tryGitInit(appPath) {
   }
 }
 
-// hello-larkintuckerllc-react-scripts start
-function helloLarkinTuckerLLCDirections() {
-  console.log(chalk.yellow('Hello Larkin & Tucker LLC Directions'));
+// ant-design-larkintuckerllc-react-scripts start
+function antDesignLarkinTuckerLLCDirections() {
+  console.log(chalk.yellow('Ant Design Larkin & Tucker LLC Directions'));
   console.log('Inside that directory, you can run several commands:');
   console.log();
   console.log(chalk.cyan(`  yarn add --dev less`));
   console.log('    Adds support for Less.');
+  console.log();
+  console.log(chalk.cyan(`  yarn add antd`));
+  console.log('    Adds support for Ant Design.');
+  console.log();
+  console.log(chalk.cyan(`  vi less-modify-vars.js`));
+  console.log('    Edit file exporting object of Less variables.');
 }
-// hello-larkintuckerllc-react-scripts end
+// ant-design-larkintuckerllc-react-scripts end
 
 module.exports = function(
   appPath,
@@ -267,9 +273,9 @@ module.exports = function(
   console.log();
   console.log('Happy hacking!');
 
-  // hello-larkintuckerllc-react-scripts start
-  helloLarkinTuckerLLCDirections();
-  // hello-larkintuckerllc-react-scripts end
+  // ant-design-larkintuckerllc-react-scripts start
+  antDesignLarkinTuckerLLCDirections();
+  // ant-design-larkintuckerllc-react-scripts end
 };
 
 function isReactInstalled(appPackage) {
